@@ -2,116 +2,163 @@ $brand-orange: #FD6514;
 $brand-pink: #F241B3;
 $brand-white: #FFFFFF;
 
-#signature{
-    position: absolute;
-    height: 38px;
-    left: 25px;
-    top: 45px;
+$font-raleway:'Raleway', sans-serif;
+$font-courier: 'Courier New', Courier, monospace;
+$font-montserrat: 'Montserrat';
 
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
-    text-align: center;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 90px auto;
+    grid-template-areas: 
+        "header"
+        "main";
 
-    color: $brand-white;
-}
-
-#linikedin-icon{
-    position: absolute;
-    top: 45px;
-    right: 120px;
-    transform: translateX(100%);
-}
-
-#github-icon{
-    position: absolute;
-    top: 45px;
-    right: 60px;
-    transform: translateX(100%);
-}
-
-
-.form-container{
-    position: absolute;
-    width: 61%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-
-    .white-rectangle{
-        width: 100%;
-        height: 11%;
-        background-color: $brand-white;
-        border-radius: 15px;
-
-        /* Centralize grid container */
+    .head {
+        grid-area: header;
         display: flex;
-        align-items: center; /* Centre vertically */
+        align-items: center;
 
-        .grid-container{
-            display: grid;
-            grid-template-columns: 63% 32%;
-            grid-template-rows: 100%;
-            grid-gap: 5%;
-            width: 100%;
+        .signature{
+            font-family: $font-raleway;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 32px;
+            text-align: center;
+            color: $brand-white;
+            transform: translateX(20px)
+        }
 
-            .text-input{
-                position: relative;
-                top: 10%;
-                left: 2.5%;
-                height: 73%;
-                width: 100%;
+        .linkedin-icon{
+            position: absolute;
+            top: 30px;
+            right: 120px;
+            transform: translateX(100%);
+            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
 
-                font-family: 'Raleway', sans-serif;
-                font-weight: lighter;
-                font-size: 45px;
-                text-align: center;
-                text-transform: uppercase;
-                letter-spacing: 5px;
-            }
-
-            .pink-rectangle{
-                position: relative;
-                top: 10%;
-                right: 2.5%;
-                height: 80%;
-                background-color: $brand-pink;
-                border-radius: 45px;
-
-                /* Centralize input box */
-                display: flex;
-                justify-content: center; /* Centre horizontally */
-                align-items: center; /* Centre vertically */
-
-                .character-input{
-                    position: relative;
-                    height: 70%;
-                    width: 90%;
-
-                    font-family: 'Courier New', Courier, monospace;
-                    font-weight: normal;
-                    font-size: 60px;
-                    color: $brand-white;
-                    text-align: center;
-                    letter-spacing: 20px;
-                }
-            }
+        .github-icon{
+            position: absolute;
+            top: 30px;
+            right: 60px;
+            transform: translateX(100%);
         }
     }
 
-    .submit-btn{
-        font-family: 'Raleway', sans-serif;
-        font-weight: lighter;
-        font-size: 34px;
-        text-align: center;
-        color: $brand-white;
-        margin: auto; /* centralize */
-        margin-top: 10px;
+    .body {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 250px 100px 200px;
+        grid-template-areas: 
+            "output"
+            "logo"
+            "form";
+
+        .output-box{
+            grid-area: output;
+            border: 5px solid $brand-pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .text-output{
+                white-space: pre;
+                font-family: $font-courier;
+                font-weight: bold;
+                font-size: 18px;
+                color: $brand-white;
+                text-align: center;
+            }
+        }
+
+        .logo-box{
+            grid-area: logo;
+            border: 5px solid $brand-white;
+        }
+
+        .form-box{
+            grid-area: form;
+            border: 5px solid $brand-orange;
+            grid-area: form;
+            border: 5px solid $brand-orange;
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 100px 50px;
+            grid-template-areas: 
+                "inputs"
+                "button";
+
+            .white-rectangle{
+                grid-area: inputs;
+                width: 47%;
+                height: 80px;
+                background-color: $brand-white;
+                border: 1px solid #53568E;
+                border-radius: 15px;
+                margin-top: 20px;
+                justify-self: center;
+
+                display: grid;
+                grid-template-columns: 62.5% 32.5%;
+                grid-template-rows: auto;
+                grid-gap: 3%;
+
+                .text-input{
+                    position: relative;
+                    top: 13%;
+                    left: 4%;
+                    height: 75%;
+
+                    font-family: $font-raleway;
+                    font-weight: lighter;
+                    font-size: 60px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    letter-spacing: 15px;
+                }
+
+                .pink-rectangle{
+                    position: relative;
+                    top: 10%;
+                    height: 80%;
+                    background-color: $brand-pink;
+                    border-radius: 45px;
+
+                    .character-input{
+                        position: relative;
+                        height: 70%;
+                        width: 90%;
+                        top: 15%;
+                        left: 7%;
+
+                        font-family: $font-courier;
+                        font-weight: normal;
+                        font-size: 50px;
+                        color: $brand-white;
+                        text-align: center;
+                        letter-spacing: 20px;
+                    }
+                }
+            }
+
+            .submit-btn{
+                grid-area: button;
+                justify-self: center;
+                height: max-content;
+
+                font-family: $font-raleway;
+                font-weight: lighter;
+                font-size: 30px;
+                text-align: center;
+                color: $brand-white;
+            }
+        }
+
     }
 }
 
+/* ------------------------------- Input Box ------------------------------- */
 input{
     border: none;
     background-color: transparent;
@@ -128,13 +175,12 @@ input:focus {
 }
 
 .character-input::placeholder {
-    color: #ffffff;
-    opacity: 0.5;
+    color: $brand-white;
+    opacity: 0.3;
 }
 
 
-
-/* CSS */
+/* ---------------------------- Imported CSS ---------------------------- */
 .button-87 {
     margin: 10px;
     padding: 15px 30px;
@@ -153,29 +199,18 @@ input:focus {
     -webkit-user-select: none;
     user-select: none;
     touch-action: manipulation;
-  }
-  
-  .button-87:hover {
+}
+
+.button-87:hover {
     background-position: right center;
     /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
-  }
-  
-  .button-87:active {
+}
+
+.button-87:active {
     transform: scale(0.95);
-  }
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

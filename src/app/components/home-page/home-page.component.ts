@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TextifyService } from 'src/app/services/textify.service';
 
 @Component({
   selector: 'app-home-page',
@@ -10,15 +10,24 @@ export class HomePageComponent implements OnInit {
 
   textInput: string = "";
   characterInput: string = "";
+  textOutput: string = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  submit() {
-    console.log("SUBMIT");
-    // Perform the submit action, such as sending data to a server
+  submit(): void {
+    if (this.validateInput()){
+      this.textOutput = TextifyService.convertWord(this.textInput, this.characterInput);
+    }
   }
 
+  validateInput(): boolean {
+    if (this.characterInput.length < 4){
+      alert("There must be 4 characters to draw with")
+      return false;
+    }
+    return true;
+  }
 }
