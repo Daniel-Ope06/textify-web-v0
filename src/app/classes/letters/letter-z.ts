@@ -15,8 +15,8 @@ export class LetterZ implements CharacterInterface {
             case 1: line = this.llll + this.llll + this.llll + this.oooo; break;
             case 2: line = this.oooo + this.oooo + this.llll + this.oooo; break;
             case 3: line = this.oooo + this.oooo + this.llll + this.oooo; break;
-            case 4: line = this.llll + this.llll + this.llll + this.oooo; break;
-            case 5: line = this.llll + this.llll + this.llll + this.oooo; break;
+            case 4: line = this.oooo + this.llll + this.oooo + this.oooo; break;
+            case 5: line = this.oooo + this.llll + this.oooo + this.oooo; break;
             case 6: line = this.llll + this.oooo + this.oooo + this.oooo; break;
             case 7: line = this.llll + this.oooo + this.oooo + this.oooo; break;
             case 8: line = this.llll + this.llll + this.llll + this.oooo; break;
