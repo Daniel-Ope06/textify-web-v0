@@ -12,7 +12,9 @@ export class HomePageComponent implements OnInit {
   characterInput: string = "";
   textOutput: string = "";
 
-  constructor() { }
+  constructor() { 
+    this.textOutput = TextifyService.convertWord("A", "+-+-");
+  }
 
   ngOnInit(): void {
   }

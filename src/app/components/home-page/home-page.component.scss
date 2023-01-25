@@ -9,7 +9,7 @@ $font-montserrat: 'Montserrat';
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 90px auto;
+    grid-template-rows: 90px 100vh;
     grid-template-areas: 
         "header"
         "main";
@@ -57,7 +57,7 @@ $font-montserrat: 'Montserrat';
 
         .output-box{
             grid-area: output;
-            border: 5px solid $brand-pink;
+            /*border: 5px solid $brand-pink;*/
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,14 +74,15 @@ $font-montserrat: 'Montserrat';
 
         .logo-box{
             grid-area: logo;
-            border: 5px solid $brand-white;
+            /*border: 5px solid $brand-white;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .form-box{
             grid-area: form;
-            border: 5px solid $brand-orange;
-            grid-area: form;
-            border: 5px solid $brand-orange;
+            /*border: 5px solid $brand-orange;*/
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: 100px 50px;
