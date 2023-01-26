@@ -19,6 +19,20 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ClipBoardCopy(): void{
+    const content1 = document.createElement("textarea");
+    content1.style.position = "fixed";
+    content1.style.left = "0";
+    content1.style.top = "0";
+    content1.style.opacity = "0";
+    content1.value = this.textOutput;
+    document.body.appendChild(content1);
+    content1.focus();
+    content1.select();
+    document.execCommand("copy")
+    document.body.removeChild(content1);
+  }
+
   submit(): void {
     if (this.characterInput.length == 0 && this.textInput.length == 0){
       this.textOutput = TextifyService.convertWord("TEXTIFY", "*::*");

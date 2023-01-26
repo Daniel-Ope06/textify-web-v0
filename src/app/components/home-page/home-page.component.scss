@@ -9,7 +9,7 @@ $font-montserrat: 'Montserrat';
 .grid-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 90px 100vh;
+    grid-template-rows: 130px 100vh;
     grid-template-areas: 
         "header"
         "main";
@@ -18,15 +18,47 @@ $font-montserrat: 'Montserrat';
         grid-area: header;
         display: flex;
         align-items: center;
+        /*border: 5px solid $brand-white;*/
 
         .signature{
+            position: absolute;
+            top: 30px;
+            transform: translateX(20px);
+            
             font-family: $font-raleway;
             font-style: italic;
             font-weight: bold;
             font-size: 32px;
             text-align: center;
             color: $brand-white;
-            transform: translateX(20px)
+        }
+
+        .settings-btn{
+            position: absolute;
+            top: 80px;
+            left: 15px;
+
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+
+            &:hover{
+                path{fill: $brand-orange;}
+            }
+        }
+
+        .clipboard-btn{
+            position: absolute;
+            top: 80px;
+            left: 65px;
+
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+
+            &:hover{
+                path{fill: $brand-orange;}
+            }
         }
 
         .linkedin-icon{
@@ -35,6 +67,10 @@ $font-montserrat: 'Montserrat';
             right: 120px;
             transform: translateX(100%);
             transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+            &:hover{
+                path{fill: $brand-orange;}
+            }
         }
 
         .github-icon{
@@ -42,6 +78,10 @@ $font-montserrat: 'Montserrat';
             top: 30px;
             right: 60px;
             transform: translateX(100%);
+
+            &:hover{
+                path{fill: $brand-orange;}
+            }
         }
     }
 
@@ -117,6 +157,11 @@ $font-montserrat: 'Montserrat';
                     text-align: center;
                     text-transform: uppercase;
                     letter-spacing: 15px;
+
+                    &::placeholder{
+                        color: #000000;
+                        opacity: 0.3;
+                    }
                 }
 
                 .pink-rectangle{
@@ -139,6 +184,11 @@ $font-montserrat: 'Montserrat';
                         color: $brand-white;
                         text-align: center;
                         letter-spacing: 20px;
+
+                        &::placeholder{
+                            color: $brand-white;
+                            opacity: 0.3;
+                        }
                     }
                 }
             }
@@ -163,23 +213,12 @@ $font-montserrat: 'Montserrat';
 input{
     border: none;
     background-color: transparent;
-}
 
-input:focus {
-    border: none !important;
-    outline: none;
+    &:focus{
+        border: none !important;
+        outline: none;
+    }
 }
-
-.text-input::placeholder {
-    color: #000000;
-    opacity: 0.3;
-}
-
-.character-input::placeholder {
-    color: $brand-white;
-    opacity: 0.3;
-}
-
 
 /* ---------------------------- Imported CSS ---------------------------- */
 .button-87 {
