@@ -45,11 +45,11 @@
         <form (ngSubmit)="submit()" class="form-box">
             <div class="white-rectangle">
                 <!-- Text Input -->
-                <input [(ngModel)]="textInput" maxlength="7" type="text" class="text-input" placeholder="TEXTIFY" name="textInput">
+                <input [(ngModel)]="textInput" maxlength="7" type="text" class="text-input" placeholder="TEXTIFY" name="textInput" autocomplete="off">
 
                 <!-- Character Input -->
                 <div class="pink-rectangle">
-                    <input [(ngModel)]="characterInput" maxlength="4" type="text" class="character-input" placeholder="+-+-" name="characterInput">
+                    <input [(ngModel)]="characterInput" maxlength="4" type="text" class="character-input" placeholder="*::*" name="characterInput" autocomplete="off">
                 </div>
             </div>
 
