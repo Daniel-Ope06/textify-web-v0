@@ -19,6 +19,13 @@ import { Number3 } from "./numbers/number3"; import { Number8 } from "./numbers/
 import { Number4 } from "./numbers/number4"; import { Number9 } from "./numbers/number9";
 
 
+// -------------------------------- Specials --------------------------------
+import { Hashtag } from "./special/hashtag";
+import { QuestionMark } from "./special/question-mark";
+import { Exclamation } from "./special/exclamation";
+import { Addition } from "./special/addition";
+import { Space } from "./special/space";
+
 export class AllCharacters {
     static symbol: string = "$$$$";
 
@@ -41,6 +48,13 @@ export class AllCharacters {
     static num3: Number3; static num8: Number8;
     static num4: Number4; static num9: Number9;
 
+    // Specials
+    static hashtag: Hashtag;
+    static questionMark: QuestionMark;
+    static exclamation: Exclamation;
+    static addition: Addition;
+    static space: Space;
+
     public static initializeSymbol(symbol: string): void{
         this.symbol = symbol;
 
@@ -62,6 +76,13 @@ export class AllCharacters {
         this.num2 = new Number2(this.symbol); this.num7 = new Number7(this.symbol);
         this.num3 = new Number3(this.symbol); this.num8 = new Number8(this.symbol);
         this.num4 = new Number4(this.symbol); this.num9 = new Number9(this.symbol);
+
+        // Specials
+        this.hashtag = new Hashtag(this.symbol);
+        this.questionMark = new QuestionMark(this.symbol);
+        this.exclamation = new Exclamation(this.symbol);
+        this.addition = new Addition(this.symbol);
+        this.space = new Space(this.symbol);
     }
 
     public static getLine(word: string, lineNumber: number): string{
@@ -109,6 +130,13 @@ export class AllCharacters {
                 case "7": line += this.num7.getLine(lineNumber); break;
                 case "8": line += this.num8.getLine(lineNumber); break;
                 case "9": line += this.num9.getLine(lineNumber); break;
+
+                // Specials
+                case "#": line += this.hashtag.getLine(lineNumber); break;
+                case "?": line += this.questionMark.getLine(lineNumber); break;
+                case "!": line += this.exclamation.getLine(lineNumber); break;
+                case "+": line += this.addition.getLine(lineNumber); break;
+                case " ": line += this.space.getLine(lineNumber); break;
             }
         }
         return line;
