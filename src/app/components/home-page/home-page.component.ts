@@ -13,20 +13,29 @@ export class HomePageComponent implements OnInit {
   textOutput: string = "";
 
   constructor() { 
-    this.textOutput = TextifyService.convertWord("TEXTIFY", "+-+-");
+    this.textOutput = TextifyService.convertWord("TEXTIFY", "*::*");
   }
 
   ngOnInit(): void {
   }
 
   submit(): void {
-    if (this.validateInput()){
+    if (this.characterInput.length == 0 && this.textInput.length == 0){
+      this.textOutput = TextifyService.convertWord("TEXTIFY", "*::*");
+    }
+    else if (this.characterInput.length == 0 && this.textInput.length > 0){
+      this.textOutput = TextifyService.convertWord(this.textInput, "*::*");
+    }
+    else if (this.characterInput.length == 4 && this.textInput.length == 0){
+      this.textOutput = TextifyService.convertWord("TEXTIFY", this.characterInput);
+    }
+    else if (this.validateInput()) {
       this.textOutput = TextifyService.convertWord(this.textInput, this.characterInput);
     }
   }
 
   validateInput(): boolean {
-    if (this.characterInput.length < 4){
+    if (this.characterInput.length > 0 && this.characterInput.length < 4){
       alert("There must be 4 characters to draw with")
       return false;
     }
