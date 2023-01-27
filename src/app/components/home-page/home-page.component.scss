@@ -61,6 +61,32 @@ $font-montserrat: 'Montserrat';
             }
         }
 
+        .copied-alert{
+            position: absolute;
+            top: 80px;
+            left: 120px;
+
+            background-color: #488286;
+            padding: 0px 15px 5px 5px; // top, right, bottom, left
+            border-radius: 20px;
+
+            .alert-check{
+                position: relative;
+                top: 5px;
+                margin-right: 5px;
+                g{fill: #234d50}
+            }
+
+            .alert-msg{
+                font-family: $font-raleway;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                text-align: center;
+                color: #234d50;
+            }
+        }
+
         .linkedin-icon{
             position: absolute;
             top: 30px;
@@ -218,6 +244,30 @@ input{
         border: none !important;
         outline: none;
     }
+}
+
+/* --------------------------------- Alert Animation --------------------------------- */
+.show-alert{
+    animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+.hide-alert{
+   display: none; 
 }
 
 /* ---------------------------- Imported CSS ---------------------------- */

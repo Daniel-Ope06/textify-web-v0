@@ -23,7 +23,12 @@
                 <path d="M8.17064 2H6.99994C5.34308 2 3.99994 3.34314 3.99994 5V29C3.99994 30.6568 5.34308 32 6.99994 32H24.9999C26.6567 32 27.9999 30.6568 27.9999 29V5C27.9999 3.34314 26.6567 2 24.9999 2H23.8291C23.9397 2.31278 23.9999 2.64936 23.9999 3V4C23.9999 5.65686 22.6567 7 20.9999 7H10.9999C9.34308 7 7.99994 5.65686 7.99994 4V3C7.99994 2.64936 8.0601 2.31278 8.17064 2ZM16.9999 13V16H19.9999C20.5521 16 20.9999 16.4477 20.9999 17C20.9999 17.5523 20.5521 18 19.9999 18H16.9999V21C16.9999 21.5522 16.5522 22 15.9999 22C15.4477 22 14.9999 21.5522 14.9999 21V18H11.9999C11.4477 18 10.9999 17.5523 10.9999 17C10.9999 16.4477 11.4477 16 11.9999 16H14.9999V13C14.9999 12.4477 15.4477 12 15.9999 12C16.5522 12 16.9999 12.4477 16.9999 13Z" fill="white"/>
             </svg>
         </button>
-            
+
+        <!-- Copied Alert -->
+        <div class="copied-alert show-alert" [ngClass]="{'hide-alert': isAlertHidden}">
+            <svg class="alert-check" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="24px" height="24px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.514,0 -10,4.486 -10,10c0,5.514 4.486,10 10,10c5.514,0 10,-4.486 10,-10c0,-1.126 -0.19602,-2.2058 -0.54102,-3.2168l-1.61914,1.61914c0.105,0.516 0.16016,1.05066 0.16016,1.59766c0,4.411 -3.589,8 -8,8c-4.411,0 -8,-3.589 -8,-8c0,-4.411 3.589,-8 8,-8c1.633,0 3.15192,0.49389 4.41992,1.33789l1.43164,-1.43164c-1.648,-1.194 -3.66656,-1.90625 -5.85156,-1.90625zM21.29297,3.29297l-10.29297,10.29297l-3.29297,-3.29297l-1.41406,1.41406l4.70703,4.70703l11.70703,-11.70703z"></path></g></g></svg>
+            <span class="alert-msg">Copied</span>
+        </div>
 
         <!-- Linkedin Icon -->
         <a href="https://www.linkedin.com/in/opeoluwa-oyedeji/" aria-label="My LinkedIn" title="My LinkedIn" target="_blank" rel="noopener noreferrer">

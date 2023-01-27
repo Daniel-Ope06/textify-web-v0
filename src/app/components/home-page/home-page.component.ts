@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TextifyService } from 'src/app/services/textify.service';
 
 @Component({
@@ -11,8 +11,9 @@ export class HomePageComponent implements OnInit {
   textInput: string = "";
   characterInput: string = "";
   textOutput: string = "";
+  isAlertHidden = true;
 
-  constructor() { 
+  constructor(private renderer: Renderer2) { 
     this.textOutput = TextifyService.convertWord("TEXTIFY", "*::*");
   }
 
@@ -31,6 +32,17 @@ export class HomePageComponent implements OnInit {
     content1.select();
     document.execCommand("copy")
     document.body.removeChild(content1);
+    this.showCopiedAlert();
+  }
+
+  async showCopiedAlert(): Promise<void>{
+    this.isAlertHidden = false;
+    await this.delay(2000);
+    this.isAlertHidden = true;
+  }
+
+  async delay(ms: number): Promise<void> {
+    await new Promise<void>(resolve => setTimeout(() => resolve(), ms));
   }
 
   submit(): void {
