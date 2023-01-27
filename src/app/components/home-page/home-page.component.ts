@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ClipBoardCopy(): void{
+  clipBoardCopy(): void{
     const content1 = document.createElement("textarea");
     content1.style.position = "fixed";
     content1.style.left = "0";
