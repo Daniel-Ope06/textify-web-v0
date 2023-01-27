@@ -151,10 +151,11 @@ $font-montserrat: 'Montserrat';
             /*border: 5px solid $brand-orange;*/
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 100px 50px;
+            grid-template-rows: 100px 50px 100px;
             grid-template-areas: 
                 "inputs"
-                "button";
+                "button"
+                "alert";
 
             .white-rectangle{
                 grid-area: inputs;
@@ -230,6 +231,38 @@ $font-montserrat: 'Montserrat';
                 text-align: center;
                 color: $brand-white;
             }
+
+            .input-alert{
+                grid-area: alert;
+                position: relative;
+                top: 50px;
+                max-width: 420px;
+                height: 50px;
+
+                padding: 0px 0px 5px 0px; // top, right, bottom, left
+                background-color: #ebbedc;
+                border-radius: 5px;
+                border-right: 5px solid $brand-pink;
+
+                .warning-symbol{
+                    position: relative;
+                    top: -3px;
+                    margin-right: 5px;
+                    g{fill: $brand-pink};
+                    transform: scale(0.8);
+                }
+
+                .alert-msg{
+                    position: relative;
+                    top: -30px;
+
+                    font-family: $font-raleway;
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-align: center;
+                    color: $brand-pink;
+                }
+            }
         }
 
     }
@@ -247,9 +280,17 @@ input{
 }
 
 /* --------------------------------- Alert Animation --------------------------------- */
-.show-alert{
+.show-alert-1{
     animation: fadeInOut 2s ease-in-out forwards;
 }
+
+.show-alert-2{
+    animation: slideIn 4s ease-in-out forwards;
+}
+
+.hide-alert{
+    display: none; 
+ }
 
 @keyframes fadeInOut {
     0% {
@@ -266,8 +307,19 @@ input{
     }
 }
 
-.hide-alert{
-   display: none; 
+@keyframes slideIn {
+    0% {
+        transform: translateX(-110%);
+      }
+      10%{
+        transform: translateX(-2.5%);
+      }
+      90%{
+        transform: translateX(-2.5%);
+      }
+      100% {
+        transform: translateX(-110%);
+      }
 }
 
 /* ---------------------------- Imported CSS ---------------------------- */
