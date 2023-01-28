@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     position: relative;
-    max-height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(243.18deg, #53568e40 0%, #2f355940 100%),
-                linear-gradient(116.82deg, #3D3567 0%, #245A6D 100%);
+    max-height: 2000px;
+    overflow-x: hidden;
+    background: linear-gradient(243.18deg, #53568e40 0%, #2f355940 100%) no-repeat,
+                linear-gradient(116.82deg, #3D3567 0%, #245A6D 100%) no-repeat;         
 }
+
+@media (max-width: 1024px) {
+    body{
+        background: #3D3567;
+    }
+} 
 
 

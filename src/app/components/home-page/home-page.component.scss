@@ -6,7 +6,7 @@ $font-raleway:'Raleway', sans-serif;
 $font-courier: 'Courier New', Courier, monospace;
 $font-montserrat: 'Montserrat';
 
-$mobile-width: 600px;
+$mobile-width: 1024px;
 
 .grid-container {
     display: grid;
@@ -15,6 +15,12 @@ $mobile-width: 600px;
     grid-template-areas: 
         "header"
         "main";
+
+    @media (max-width: $mobile-width) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 360px 100vh;
+    }
+
 
     .head {
         grid-area: header;
@@ -33,6 +39,12 @@ $mobile-width: 600px;
             font-size: 32px;
             text-align: center;
             color: $brand-white;
+
+            @media (max-width: $mobile-width) {
+                top: 86px;
+                left: 50%;
+                transform: scale(2);
+            }
         }
 
         .settings-btn{
@@ -46,6 +58,16 @@ $mobile-width: 600px;
 
             &:hover{
                 path{fill: $brand-orange;}
+            }
+
+            @media (max-width: $mobile-width){
+                top: 250px;
+                left: 65px;
+                transform: scale(4);
+
+                &:hover{
+                    path{fill: $brand-white;}
+                }
             }
         }
 
@@ -61,6 +83,16 @@ $mobile-width: 600px;
             &:hover{
                 path{fill: $brand-orange;}
             }
+
+            @media (max-width: $mobile-width){
+                top: 250px;
+                left: 250px;
+                transform: scale(4);
+
+                &:hover{
+                    path{fill: $brand-white;}
+                }
+            }
         }
 
         .copied-alert{
@@ -71,6 +103,13 @@ $mobile-width: 600px;
             background-color: #488286;
             padding: 0px 15px 5px 5px; // top, right, bottom, left
             border-radius: 20px;
+
+            @media (max-width: $mobile-width){
+                top: 250px;
+                left: 530px;
+                transform: scale(3);
+                width: 100px;
+            }
 
             .alert-check{
                 position: relative;
@@ -99,6 +138,16 @@ $mobile-width: 600px;
             &:hover{
                 path{fill: $brand-orange;}
             }
+
+            @media (max-width: $mobile-width){
+                top: 250px;
+                left: 900px;
+                transform: scale(4);
+
+                &:hover{
+                    path{fill: $brand-white;}
+                }
+            }
         }
 
         .github-icon{
@@ -109,6 +158,16 @@ $mobile-width: 600px;
 
             &:hover{
                 path{fill: $brand-orange;}
+            }
+
+            @media (max-width: $mobile-width){
+                top: 250px;
+                left: 1100px;
+                transform: scale(4);
+
+                &:hover{
+                    path{fill: $brand-white;}
+                }
             }
         }
     }
@@ -122,6 +181,11 @@ $mobile-width: 600px;
             "output"
             "logo"
             "form";
+
+        @media (max-width: $mobile-width){
+            grid-template-columns:  minmax(1200px, 1fr);
+            grid-template-rows: 650px 200px 350px;
+        }
 
         .output-box{
             grid-area: output;
@@ -159,6 +223,10 @@ $mobile-width: 600px;
                 "button"
                 "alert";
 
+            @media (max-width: $mobile-width){
+                grid-template-rows: 150px 50px 100px;
+            }
+
             .white-rectangle{
                 grid-area: inputs;
                 width: 47%;
@@ -173,6 +241,13 @@ $mobile-width: 600px;
                 grid-template-columns: 62.5% 32.5%;
                 grid-template-rows: auto;
                 grid-gap: 3%;
+
+                @media (max-width: $mobile-width){
+                    width: 70%;
+                    height: 120px;
+                    grid-template-columns: 62.5% 35.5%;
+                    grid-gap: 0.5%;
+                }
 
                 .text-input{
                     position: relative;
@@ -232,6 +307,12 @@ $mobile-width: 600px;
                 font-size: 30px;
                 text-align: center;
                 color: $brand-white;
+
+                @media (max-width: $mobile-width){
+                    position: relative;
+                    top: 30px;
+                    font-size: 60px;
+                }
             }
 
             .input-alert{
@@ -246,12 +327,25 @@ $mobile-width: 600px;
                 border-radius: 5px;
                 border-right: 5px solid $brand-pink;
 
+                @media (max-width: $mobile-width) {
+                    top: 200px;
+                    height: max-content;
+                    max-width: max-content;
+                    padding: 0px 150px 5px 0px; // top, right, bottom, left
+                }
+
                 .warning-symbol{
                     position: relative;
                     top: -3px;
                     margin-right: 5px;
                     g{fill: $brand-pink};
                     transform: scale(0.8);
+
+                    @media (max-width: $mobile-width){
+                        top: 7px;
+                        left: 30px;
+                        transform: scale(1.5);
+                    }
                 }
 
                 .alert-msg{
@@ -263,6 +357,12 @@ $mobile-width: 600px;
                     font-size: 20px;
                     text-align: center;
                     color: $brand-pink;
+
+                    @media (max-width: $mobile-width){
+                        top: -10px;
+                        left: 40px;
+                        font-size: 50px;
+                    }
                 }
             }
         }
@@ -355,17 +455,3 @@ input{
 .button-87:active {
     transform: scale(0.95);
 }
-
-/* -------------------------------------------- Mobile Styling --------------------------------------- */
-/*
-@media (max-width: 600px) {
-    .grid-container{
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 130px 100vh;
-        grid-template-areas: 
-            "header"
-            "main";
-    }
-}
-*/
