@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "textify-daniel",
+    "textify": "textify-daniel"
+  },
+  "targets": {},
+  "etags": {}
+}
