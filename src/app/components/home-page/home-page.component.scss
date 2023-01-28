@@ -6,6 +6,8 @@ $font-raleway:'Raleway', sans-serif;
 $font-courier: 'Courier New', Courier, monospace;
 $font-montserrat: 'Montserrat';
 
+$mobile-width: 600px;
+
 .grid-container {
     display: grid;
     grid-template-columns: auto;
@@ -354,9 +356,16 @@ input{
     transform: scale(0.95);
 }
 
-
-
-
-
-
-
+/* -------------------------------------------- Mobile Styling --------------------------------------- */
+/*
+@media (max-width: 600px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 130px 100vh;
+        grid-template-areas: 
+            "header"
+            "main";
+    }
+}
+*/
