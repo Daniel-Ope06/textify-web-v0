@@ -42,7 +42,7 @@ $mobile-width: 1024px;
 
             @media (max-width: $mobile-width) {
                 top: 86px;
-                left: 50%;
+                left: 40%;
                 transform: scale(2);
             }
         }
@@ -194,7 +194,7 @@ $mobile-width: 1024px;
             align-items: center;
             justify-content: center;
 
-            .text-output{
+            .text-output, .user-text{
                 white-space: pre;
                 font-family: $font-courier;
                 font-weight: bold;
@@ -202,6 +202,17 @@ $mobile-width: 1024px;
                 color: $brand-white;
                 text-align: center;
             }
+
+            .user-text{
+                a{
+                    color: $brand-orange;
+                }
+
+                @media (max-width: $mobile-width){
+                    font-size: 45px;
+                }
+            }
+
         }
 
         .logo-box{
@@ -390,7 +401,7 @@ input{
     animation: slideIn 4s ease-in-out forwards;
 }
 
-.hide-alert{
+.hide{
     display: none; 
  }
 

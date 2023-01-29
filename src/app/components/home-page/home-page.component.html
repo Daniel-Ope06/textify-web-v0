@@ -3,7 +3,7 @@
         <div class="signature">Daniel Ope</div>
 
         <!-- Settings Icon -->
-        <button class="settings-btn" type="button" aria-label="Instructions" title="Instructions">
+        <button (click)="showSettings()" class="settings-btn" type="button" aria-label="Instructions" title="Instructions">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_203_12)">
                     <path d="M18.8093 2.10078C17.9837 -0.70026 14.0163 -0.700258 13.1907 2.10078L12.9905 2.78006C12.4629 4.5698 10.4187 5.41654 8.78016 4.52402L8.15826 4.18528C5.59384 2.78844 2.78844 5.59386 4.18528 8.15826L4.52402 8.78016C5.41654 10.4187 4.5698 12.4629 2.78006 12.9905L2.10078 13.1907C-0.70026 14.0163 -0.700258 17.9837 2.10078 18.8093L2.78006 19.0095C4.5698 19.5371 5.41654 21.5812 4.52402 23.2198L4.18528 23.8418C2.78844 26.4062 5.59384 29.2116 8.15826 27.8148L8.78016 27.476C10.4187 26.5834 12.4629 27.4302 12.9905 29.22L13.1907 29.8992C14.0163 32.7002 17.9837 32.7002 18.8093 29.8992L19.0095 29.22C19.5371 27.4302 21.5812 26.5834 23.2198 27.476L23.8418 27.8148C26.4062 29.2116 29.2116 26.4062 27.8148 23.8418L27.476 23.2198C26.5834 21.5812 27.4302 19.5371 29.22 19.0095L29.8992 18.8093C32.7002 17.9837 32.7002 14.0163 29.8992 13.1907L29.22 12.9905C27.4302 12.4629 26.5834 10.4187 27.476 8.78016L27.8148 8.15826C29.2116 5.59384 26.4062 2.78844 23.8418 4.18528L23.2198 4.52402C21.5812 5.41654 19.5371 4.5698 19.0095 2.78006L18.8093 2.10078ZM16 21.8576C12.7649 21.8576 10.1424 19.2351 10.1424 16C10.1424 12.7649 12.7649 10.1424 16 10.1424C19.2351 10.1424 21.8576 12.7649 21.8576 16C21.8576 19.2351 19.2351 21.8576 16 21.8576Z" fill="white"/>
@@ -25,7 +25,7 @@
         </button>
 
         <!-- Copied Alert -->
-        <div class="copied-alert show-alert-1" [ngClass]="{'hide-alert': isCopyAlertHidden}">
+        <div class="copied-alert show-alert-1" [ngClass]="{'hide': isCopyAlertHidden}">
             <svg class="alert-check" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="24px" height="24px" fill-rule="nonzero"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.514,0 -10,4.486 -10,10c0,5.514 4.486,10 10,10c5.514,0 10,-4.486 10,-10c0,-1.126 -0.19602,-2.2058 -0.54102,-3.2168l-1.61914,1.61914c0.105,0.516 0.16016,1.05066 0.16016,1.59766c0,4.411 -3.589,8 -8,8c-4.411,0 -8,-3.589 -8,-8c0,-4.411 3.589,-8 8,-8c1.633,0 3.15192,0.49389 4.41992,1.33789l1.43164,-1.43164c-1.648,-1.194 -3.66656,-1.90625 -5.85156,-1.90625zM21.29297,3.29297l-10.29297,10.29297l-3.29297,-3.29297l-1.41406,1.41406l4.70703,4.70703l11.70703,-11.70703z"></path></g></g></svg>
             <span class="alert-msg">Copied</span>
         </div>
@@ -61,7 +61,25 @@
 
     <div class="body">
         <div class="output-box">
-            <p class="text-output">{{ textOutput }}</p>
+            <p class="user-text" [ngClass]="{'hide': isGuideHidden}">
+                +----------------------------------+<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INSTRUCTIONS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                +----------------------------------+<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter word in white box,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;characters in pink.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                +----------------------------------+<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOIN GDSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                +----------------------------------+<br/>
+                |Join GDSC for endless tech growth&nbsp;|<br/>
+                |&nbsp;&nbsp;opportunities and a supportive&nbsp;&nbsp;|<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;community.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/Daniel-Ope06" aria-label="WhatsApp Link" title="WhatsApp Link" target="_blank" rel="noopener noreferrer">WhatsApp Link</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
+                +----------------------------------+<br/>
+                
+
+
+            </p>
+            <p class="text-output" [ngClass]="{'hide': isOutputtHidden}">{{ textOutput }}</p>
         </div>
 
         <div class="logo-box">
@@ -84,7 +102,7 @@
             <button  class="button-87 submit-btn" type="submit">TEXTIFY</button>
 
             <!-- Input Alert -->
-            <div class="input-alert show-alert-2" [ngClass]="{'hide-alert': isInputAlertHidden}">
+            <div class="input-alert show-alert-2" [ngClass]="{'hide': isInputAlertHidden}">
                 <svg class="warning-symbol" width="64px" height="64px" viewBox="-4.8 -4.8 57.60 57.60" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)" stroke-width="0.00048000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"> <path d="M0 0h48v48H0z" fill="none"></path> <g id="Shopicon"> <path d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z M24,40c-8.822,0-16-7.178-16-16S15.178,8,24,8 s16,7.178,16,16S32.822,40,24,40z"></path> <rect x="22" y="12" width="4" height="16"></rect> <circle cx="24" cy="34" r="2"></circle> </g> </g></svg>
                 <span class="alert-msg">{{ inputAlertMsg }}</span>
             </div>

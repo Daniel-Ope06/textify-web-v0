@@ -10,7 +10,10 @@ export class HomePageComponent implements OnInit {
   textInput: string = "";
   characterInput: string = "";
   textOutput: string = "";
+  userGuide: string = "";
 
+  isGuideHidden: boolean = true;
+  isOutputtHidden: boolean = false;
   isCopyAlertHidden: boolean = true;
   isInputAlertHidden: boolean = true;
   inputAlertMsg: string = "Testing the input message";
@@ -70,6 +73,15 @@ export class HomePageComponent implements OnInit {
       return false;
     }
     return true
+  }
+
+  showSettings(): void{
+    this.isGuideHidden = !this.isGuideHidden;
+    this.isOutputtHidden = !this.isOutputtHidden;
+
+    if (this.isGuideHidden){
+      this.submit();
+    }
   }
 
   clipBoardCopy(): void{
