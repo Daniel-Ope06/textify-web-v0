@@ -17,8 +17,6 @@ $min-tablet-width: 1000px;
 
 
 /*************** DESKTOP VIEW ***************/
-main { overflow-x: scroll; }
-
 .flex-centralize {
     display: flex;
     flex-direction: column;
@@ -72,6 +70,6 @@ main { overflow-x: scroll; }
 
 
 /************** TABLET & MOBILE VIEW ***************/
-@media (max-width: calc($min-tablet-width - 1px)) {
-    
+@media (max-width: $min-tablet-width) {
+    main { overflow-x: scroll; }
 }
