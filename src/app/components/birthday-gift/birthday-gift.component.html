@@ -1,1 +1,23 @@
-<p>birthday-gift works!</p>
+<main>
+    <div class="paper-background flex-centralize">
+        <ul class="list">
+            <li class="intro-heading">{{ introduction }}</li>
+            <li>{{ greeting }}</li>
+
+            <!--TO CHECK LINE SIZE OF 30 CHARACTERS-->
+            <li>012345678901234567890123456789</li>
+            <li><span class="red block" *ngFor="let _ of [].constructor(30)">&#10084;</span></li>
+
+            <!--LETTER BODY-->
+            <li *ngFor="let line of birthdayLetterLines | slice:0:4; let i = index;">
+                <span
+                *ngFor="let character of birthdayLetterLines[i].split(''); let j = index;"
+                [style.color]="lineColors[i][j]"
+                >
+                    <span *ngIf="character === ' '" class="block">&#10084;</span>
+                    <span *ngIf="character !== ' '">{{ character }}</span>
+                </span>
+            </li>
+        </ul>
+    </div>
+</main>

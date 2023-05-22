@@ -1,0 +1,77 @@
+$note-white: #FBFFFE;
+$note-black: #0B2027;
+$note-charcoal: #2C4251;
+$note-red: #6B0504;
+$note-green: #7A9E7E;
+$note-green-light: #7FB069;
+$note-green-dark: #31493C;
+
+
+/*  font-size * 0.6 = font-width
+    font-width * 30 = a line that fits 30 characters */
+$note-font-size: 1.5rem;
+$note-width: calc($note-font-size * 0.6 * 30);
+$font-courier: 'Courier New', Courier, monospace;
+
+$min-tablet-width: 1000px;
+
+
+/*************** DESKTOP VIEW ***************/
+main { overflow-x: scroll; }
+
+.flex-centralize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paper-background {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    width: $note-width;
+    border-radius: 8px;
+    background-color : $note-white;
+}
+
+.list {
+    padding: 0 !important;
+    color: $note-charcoal;
+    font-family: $font-courier;
+    font-size: $note-font-size;
+
+    li {
+        list-style: none;
+        padding-top: 0.625rem;
+        text-align: left;
+        //height: calc($note-font-size - 2px);
+        border-bottom: 3px dotted $note-red;
+    }
+}
+
+.intro-heading {
+    font-weight: 700;
+    text-align: center !important;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    border: none !important;
+}
+
+.letter-line {
+    display: inline-block;
+    margin: 0;
+}
+
+/** BLOCK STYLES **/
+.block { font-size: calc($note-font-size * 0.615) !important; }
+.red { color: $note-red; }
+.green { color: $note-green; }
+.black { color: $note-black; }
+.green-dark { color: $note-green-dark; }
+.green-light { color: $note-green-light; }
+
+
+
+/************** TABLET & MOBILE VIEW ***************/
+@media (max-width: calc($min-tablet-width - 1px)) {
+    
+}
