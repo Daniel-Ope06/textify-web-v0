@@ -9,13 +9,14 @@
             <li><span class="red block" *ngFor="let _ of [].constructor(30)">&#10084;</span></li>
 
             <!--LETTER BODY-->
-            <li *ngFor="let line of birthdayLetterLines | slice:0:2; let i = index;">
+            <li *ngFor="let line of birthdayLetterLines | slice:0:26; let i = index;">
                 <span
                 *ngFor="let character of birthdayLetterLines[i].split(''); let j = index;"
                 [style.color]="lineColors[i][j]"
+                [style.border-bottom]="'0px dashed ' + lineColors[i][j]"
                 >
                     <span *ngIf="character === ' '" class="block">&#10084;</span>
-                    <span *ngIf="character !== ' '">{{ character }}</span>
+                    <span *ngIf="character !== ' '" class="block">&#10084;</span>
                 </span>
             </li>
         </ul>

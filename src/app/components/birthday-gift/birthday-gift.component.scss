@@ -9,8 +9,9 @@ $note-green-dark: #31493C;
 
 /*  font-size * 0.6 = font-width
     font-width * 30 = a line that fits 30 characters */
-$note-font-size: 1.5rem;
-$note-width: calc($note-font-size * 0.6 * 30);
+$note-font-size: 1rem;
+$note-letter-spacing: 0.25em;
+$note-width: calc(($note-font-size * 0.6 * 30) + ($note-letter-spacing * 48));
 $font-courier: 'Courier New', Courier, monospace;
 
 $min-tablet-width: 1000px;
@@ -39,34 +40,32 @@ $min-tablet-width: 1000px;
 
     li {
         list-style: none;
-        padding-top: 0.625rem;
+        //padding: 0.25em 0;
+        //padding-top: 0.5em;
         text-align: left;
-        //height: calc($note-font-size - 2px);
-        border-bottom: 3px dotted $note-red;
+        letter-spacing: $note-letter-spacing;
+        //border-bottom: 2px dotted $note-red;
     }
 }
 
 .intro-heading {
     font-weight: 700;
-    text-align: center !important;
+    font-size: calc($note-font-size * 1.2);
     padding-top: 0;
     padding-bottom: 1rem;
     border: none !important;
-}
-
-.letter-line {
-    display: inline-block;
-    margin: 0;
+    text-align: center !important;
 }
 
 /** BLOCK STYLES **/
 .block { font-size: calc($note-font-size * 0.615) !important; }
 .red { color: $note-red; }
-.green { color: $note-green; }
-.black { color: $note-black; }
-.green-dark { color: $note-green-dark; }
-.green-light { color: $note-green-light; }
 
+
+/** LETTER STYLE **/
+.letter {
+    font-weight: 700;
+}
 
 
 /************** TABLET & MOBILE VIEW ***************/
