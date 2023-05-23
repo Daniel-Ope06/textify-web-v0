@@ -6,7 +6,7 @@ import { BirthdayGiftComponent } from './components/birthday-gift/birthday-gift.
 
 const routes: Routes = [
   {path:'home', title: 'Textify', component: HomePageComponent},
-  {path:'emmanuella', title: 'Birthday - Textify', component: BirthdayGiftComponent},
+  {path:'ella', title: 'Happy Birthday - Textify', component: BirthdayGiftComponent},
   {path:'', redirectTo: 'home', pathMatch: 'full'}
 ];
 
