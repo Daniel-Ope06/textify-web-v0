@@ -79,7 +79,22 @@ main {
 }
 
 /** BLOCK STYLES **/
-.block { font-size: calc($note-font-size * 0.615) !important; }
+.block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc($note-font-size * 0.615) !important;
+
+    svg {
+        width: calc($note-font-size * 0.615);
+        max-width: 0.615remcalc($note-font-size * 0.615);
+        height: auto;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: middle;
+        padding-right: 2px;
+      }
+}
 
 /** LETTER STYLE **/
 .letter {

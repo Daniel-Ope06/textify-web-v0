@@ -13,12 +13,16 @@
 
             <!--ROSE DRAWING-->
             <li *ngFor="let line of birthdayLetterLines | slice:0:26; let i = index;">
-                <span
+               <span
                 *ngFor="let character of birthdayLetterLines[i].split(''); let j = index;"
                 [style.color]="lineColors[i][j]">
-                    <span *ngIf="character === ' '" class="block">&#10084;</span>
+                    <span *ngIf="character === ' '" class="block">
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.6957 0C12.6522 0 10.887 1.197 10 2.943C9.11304 1.197 7.34783 0 5.30435 0C2.37391 0 0 2.457 0 5.481C0 8.505 1.81739 11.277 4.16522 13.554C6.51304 15.831 10 18 10 18C10 18 13.3739 15.867 15.8348 13.554C18.4609 11.088 20 8.514 20 5.481C20 2.448 17.6261 0 14.6957 0Z" [attr.fill]="lineColors[i][j]"/>
+                        </svg>
+                    </span>
                     <span *ngIf="character !== ' '" class="letter">{{ character }}</span>
-                </span>
+                </span> 
             </li>
 
             <!--CLOSING-->
