@@ -1,0 +1,29 @@
+<main>
+    <div class="paper-background flex-centralize">
+        <ul class="list">
+            <!--BIRTHDAY WISH-->
+            <li class="intro-heading">{{ introHeading }}</li>
+            <li class="greeting">{{ greeting }}</li>
+            <li *ngFor="let line of introParagraphLines; let i = index;" class="intro">{{ introParagraphLines[i] }}</li>
+
+            <!--EMPTY SPACING BEFORE ROSE-->
+            <li *ngFor="let _ of [].constructor(2)">
+                <span *ngFor="let _ of [].constructor(30)">&nbsp;</span>
+            </li>
+
+            <!--ROSE DRAWING-->
+            <li *ngFor="let line of birthdayLetterLines | slice:0:26; let i = index;">
+                <span
+                *ngFor="let character of birthdayLetterLines[i].split(''); let j = index;"
+                [style.color]="lineColors[i][j]">
+                    <span *ngIf="character === ' '" class="block">&#10084;</span>
+                    <span *ngIf="character !== ' '" class="letter">{{ character }}</span>
+                </span>
+            </li>
+
+            <!--CLOSING-->
+            <br/><br/>
+            <li *ngFor="let line of closingLines; let i = index" class="closing">{{ closingLines[i] }}</li>
+        </ul>
+    </div>
+</main>

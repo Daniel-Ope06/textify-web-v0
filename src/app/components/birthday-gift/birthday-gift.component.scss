@@ -1,0 +1,101 @@
+$note-white: #FBFFFE;
+$note-black: #0B2027;
+
+
+$note-charcoal: #2C4251;
+$red-dark: #860A24;
+
+
+/*  font-size * 0.6 = font-width
+    font-width * 30 = a line that fits 30 characters */
+$note-font-size: 1rem;
+$note-letter-spacing: 0.25em;
+$note-width: calc(($note-font-size * 0.6 * 30) + ($note-letter-spacing * 48));
+$font-courier: 'Courier New', Courier, monospace;
+
+
+/*************** DESKTOP VIEW ***************/
+main {
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    display: flex;
+    min-height: 100vh;
+    //min-width: calc($note-width + 6rem);
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-centralize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paper-background {
+    padding: 0.25rem 1.5rem;
+    margin: 0 auto;
+    width: $note-width;
+    border-radius: 8px;
+    background-color : $note-black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.list {
+    padding: 0 !important;
+    font-family: $font-courier;
+    font-size: $note-font-size;
+
+    li {
+        list-style: none;
+        text-align: left;
+        color: $note-white;
+        letter-spacing: $note-letter-spacing;
+    }
+}
+
+.intro-heading {
+    font-weight: 700;
+    color: $red-dark !important;
+    font-size: calc($note-font-size * 1.5);
+    padding-top: 0;
+    padding-bottom: 1rem;
+    border: none !important;
+    text-align: center !important;
+}
+
+.greeting { padding-bottom: 0.5rem; }
+
+.intro {
+    font-weight: 300;
+    padding: 0.5em 0;
+    border-bottom: 2px dotted $red-dark;
+}
+
+.closing {
+    font-weight: 300;
+    font-style: italic;
+    text-align: center !important;
+}
+
+/** BLOCK STYLES **/
+.block { font-size: calc($note-font-size * 0.615) !important; }
+
+/** LETTER STYLE **/
+.letter {
+    font-weight: 700;
+    text-transform: lowercase;
+}
+
+/************** MOBILE VIEWS ***************/
+@media (max-width: 500px) {
+    main {
+        overflow-x: scroll;
+        padding-left: 6rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    main { padding-left: 12rem; }
+}
