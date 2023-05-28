@@ -18,6 +18,13 @@ Textify is a platform that transforms words into stunning character art. It's ea
   <li>Feedback form for feature suggestions and new characters.</li>
 </ul>
 
+<h2>Progress Sneak Peak</h2>
+<h3>Multicoloured Text Image</h3>
+<strong><a href="https://textify-daniel.web.app/ella" target="_blank" rel="noopener noreferrer">Click here to check it out</a></strong>
+<br/><br/>
+<img src="https://github.com/Daniel-Ope06/Textify-Web-App/assets/97707320/196e028c-3cb2-429d-860b-263e472123c2"/>
+
+
 <details>
   <summary><h3>Languages and Tools</h3></summary>
   
