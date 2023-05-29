@@ -9,7 +9,7 @@ Textify is a platform that transforms words into stunning character art. It's ea
 
 <h2>Features:</h2>
 <ul>
-  <li>Convert words (max 7 chars) to character art with a symbol (max 4 chars).</li>
+  <li>Convert words (max 7 chars) to character art with a symbol (only 4 chars).</li>
 </ul>
 
 <h2>Coming Soon:</h2>
